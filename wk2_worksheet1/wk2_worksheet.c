@@ -91,20 +91,7 @@ void ex5(){
 
 
 void ex6(){
-    printf("\n\nExercise 6: Array Concatenation\n");
-    int array1[3]={7,12,412}, array2[3]={123,982,14}, array3[6]={}, nextFree=0;
-
-    for (int i=0; i<3; i++){
-        array3[nextFree] = array1[i];
-        nextFree++;
-        array3[nextFree] = array2[i];
-        nextFree++;
-    }
-
-    printf("\nNew array: \n");
-    for (int i=0; i<6; i++){
-    printf("%d - ", array3[i]);
-    }
+    printf("\n\nExercise 6: The input validation loop worked\n");
 }
 
 int main(){
@@ -118,11 +105,11 @@ int main(){
     3: Grade checker\n\
     4: Temperature Range Validator\n\
     5: Advanced Menu System\n\
-    6: Input Validation Loop with Termination Value");
+    6: Input Validation Loop with Termination Value\n");
 
     scanf("%d", &choice);
 
-    while(choice < 1 || choice > 6)
+    while((choice < 1 && choice != -1) || choice > 6)
     {
         printf("Invalid menu choice, please enter an option betweeen 1 and 6: ");
         scanf("%d", &choice);
@@ -130,47 +117,46 @@ int main(){
 
     switch (choice)
     {
+    
+    case -1:
+        printf("Exiting program...");
+        break;
+
     case 1: 
+        printf("\nBronze Level\n");
         ex1();
         break;
     
     case 2: 
+        printf("\nBronze Level\n");
         ex2();
         break;
 
     case 3: 
+        printf("\nSilver Level\n");
         ex3();
         break;
 
     case 4: 
+        printf("\nSilver Level\n");
         ex4();
         break;
 
+    case 5: 
+        printf("\n\nGold Level\n");
+        ex5();
+        break;
+
+    case 6: 
+        printf("\n\nGold Level\n");
+        ex6();
+        break;
+
+
     default:
+        printf("Error, undefined choice, how did you get here?");
         break;
     }
-
-
-    
-
-
-
-
-
-
-
-
-
-
-    printf("Bronze Level\n");
-    ex1();
-    ex2();
-    printf("\n\nSilver Level\n");
-    ex3();
-    ex4();
-    printf("\n\nGold Level\n");
-    //ex5();
-    //ex6();
 
     return 0;
 }
