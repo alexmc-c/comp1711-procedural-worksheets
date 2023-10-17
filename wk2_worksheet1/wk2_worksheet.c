@@ -5,6 +5,7 @@ void ex1()
     printf("Exercise 1: Positive, Negative or Zero\n");
     
     float num;
+    
     printf("Please enter a number: ");
     scanf("%f", &num);
 
